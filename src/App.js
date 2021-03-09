@@ -5,7 +5,7 @@ import faker from 'faker';
 const SETTING = {
     rowHeight : 40,
     rowNumber : 1000,
-    viewPortHeight: 280,
+    viewportHeight: 400,
 }
 
 const sources = new Array(SETTING.rowNumber).fill().map((value, index) => (({
@@ -55,9 +55,8 @@ function App() {
 
     function handleOnScroll (e) {
         const startItemNumber = Math.floor(e.target.scrollTop / SETTING.rowHeight);
-        const endItemNumber = startItemNumber + (SETTING.viewPortHeight / SETTING.rowHeight) + 4;
-        const newData = sources.slice(startItemNumber, endItemNumber);
-        // const newData = sources.filter(item => item.index >= startItemNumber && item.index <= endItemNumber);
+        const endItemNumber = startItemNumber + (SETTING.viewportHeight / SETTING.rowHeight) + 2;
+        const newData = sources.slice(startItemNumber, endItemNumber);//load more 12 items
         setData(newData);
     };
 
@@ -77,7 +76,7 @@ function App() {
                 <div className="row">
                     {renderColumn()}
                 </div>
-                <div className="viewport" onScroll={(e) => handleOnScroll(e)} style={{height: `${SETTING.viewPortHeight}px`}}>
+                <div className="viewport" onScroll={(e) => handleOnScroll(e)} style={{height: `${SETTING.viewportHeight}px`}}>
                     <div style={{position: "relative", height: `${SETTING.rowHeight * SETTING.rowNumber}px`}}>
                         {data.map((obj) => (
                             <div key={obj.index}
