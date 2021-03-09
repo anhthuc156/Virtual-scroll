@@ -1,0 +1,41 @@
+.App {
+  text-align: center;
+}
+
+.table {
+  display: flex;
+  flex-direction: column;
+  width: 2520px;
+}
+
+.row {
+  display: flex;
+  height: 40px;
+}
+
+.rowContent {
+  position: absolute;
+  left: 0;
+}
+
+.col {
+  width: 150px;
+  max-width: 150px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.table .col {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+table .row.even {
+  background-color: #f2f2f2;
+}
+
+.viewport {
+  overflow: auto;
+}
+
