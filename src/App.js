@@ -4,7 +4,7 @@ import faker from 'faker';
 
 const SETTING = {
     rowHeight : 40,
-    rowNumber : 1000,
+    rowNumber : 1000000,
     viewportHeight: 400,
 }
 
